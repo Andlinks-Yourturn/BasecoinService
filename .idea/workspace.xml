@@ -1,15 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a774a872-591d-42bb-8598-0f0b60575a00" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/cmd/CharityPro/main.go" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/utilForNewProject/NewAccount.go" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/app.go" afterPath="$PROJECT_DIR$/app/app.go" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmd/basecli/commands/cmds.go" afterPath="$PROJECT_DIR$/cmd/basecli/commands/cmds.go" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmd/basecli/commands/sendtx.go" afterPath="$PROJECT_DIR$/cmd/basecli/commands/sendtx.go" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmd/basecli/main.go" afterPath="$PROJECT_DIR$/cmd/basecli/main.go" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/state/execution.go" afterPath="$PROJECT_DIR$/state/execution.go" />
-    </list>
+    <list default="true" id="a774a872-591d-42bb-8598-0f0b60575a00" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -70,7 +62,7 @@
         <entry file="file://$PROJECT_DIR$/../go-crypto/cmd/utils.go">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-40">
-              <caret line="28" column="48" lean-forward="true" selection-start-line="28" selection-start-column="48" selection-end-line="28" selection-end-column="48" />
+              <caret line="28" column="48" lean-forward="false" selection-start-line="28" selection-start-column="48" selection-end-line="28" selection-end-column="48" />
               <folding />
             </state>
           </provider>
@@ -80,7 +72,7 @@
         <entry file="file://$PROJECT_DIR$/utilForNewProject/signMessage.go">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="583">
-              <caret line="53" column="59" lean-forward="true" selection-start-line="53" selection-start-column="59" selection-end-line="53" selection-end-column="59" />
+              <caret line="53" column="59" lean-forward="false" selection-start-line="53" selection-start-column="59" selection-end-line="53" selection-end-column="59" />
               <folding>
                 <element signature="e#27#293#0" expanded="true" />
               </folding>
@@ -1128,7 +1120,7 @@
     <entry file="file://$PROJECT_DIR$/../go-crypto/cmd/utils.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-40">
-          <caret line="28" column="48" lean-forward="true" selection-start-line="28" selection-start-column="48" selection-end-line="28" selection-end-column="48" />
+          <caret line="28" column="48" lean-forward="false" selection-start-line="28" selection-start-column="48" selection-end-line="28" selection-end-column="48" />
           <folding />
         </state>
       </provider>
@@ -1146,7 +1138,7 @@
     <entry file="file://$PROJECT_DIR$/utilForNewProject/signMessage.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="583">
-          <caret line="53" column="59" lean-forward="true" selection-start-line="53" selection-start-column="59" selection-end-line="53" selection-end-column="59" />
+          <caret line="53" column="59" lean-forward="false" selection-start-line="53" selection-start-column="59" selection-end-line="53" selection-end-column="59" />
           <folding>
             <element signature="e#27#293#0" expanded="true" />
           </folding>
