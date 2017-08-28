@@ -1,0 +1,29 @@
+<component name="libraryTable">
+  <library name="GOPATH &lt;basecoin&gt;">
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/../../../gopkg.in" />
+      <root url="file://$PROJECT_DIR$/../../../golang.org2" />
+      <root url="file://$PROJECT_DIR$/../.." />
+      <root url="file://$PROJECT_DIR$/../../../golang.org" />
+      <root url="file://$PROJECT_DIR$/../../../google.golang.org" />
+      <root url="file://$PROJECT_DIR$/../../../google.golang.org2" />
+      <root url="file://$PROJECT_DIR$/../../../golang.org1" />
+      <root url="file://$PROJECT_DIR$/../../../scholarship" />
+      <root url="file://$PROJECT_DIR$/../../../google.golang.org1" />
+    </CLASSES>
+    <SOURCES>
+      <root url="file://$PROJECT_DIR$/../../../gopkg.in" />
+      <root url="file://$PROJECT_DIR$/../../../golang.org2" />
+      <root url="file://$PROJECT_DIR$/../.." />
+      <root url="file://$PROJECT_DIR$/../../../golang.org" />
+      <root url="file://$PROJECT_DIR$/../../../google.golang.org" />
+      <root url="file://$PROJECT_DIR$/../../../google.golang.org2" />
+      <root url="file://$PROJECT_DIR$/../../../golang.org1" />
+      <root url="file://$PROJECT_DIR$/../../../scholarship" />
+      <root url="file://$PROJECT_DIR$/../../../google.golang.org1" />
+    </SOURCES>
+    <excluded>
+      <root url="file://$PROJECT_DIR$" />
+    </excluded>
+  </library>
+</component>
