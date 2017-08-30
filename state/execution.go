@@ -7,9 +7,9 @@ import (
 
 	"github.com/tendermint/basecoin/plugins/ibc"
 	"github.com/tendermint/basecoin/types"
-	util  "github.com/tendermint/basecoin/utilForNewProject"
-	"fmt"
-	"github.com/tendermint/go-wire/data"
+	//util  "github.com/tendermint/basecoin/utilForNewProject"
+	//"fmt"
+	//"github.com/tendermint/go-wire/data"
 )
 
 // If the tx is invalid, a TMSP error will be returned.

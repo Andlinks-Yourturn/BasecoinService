@@ -28,18 +28,21 @@ func main(){
 	//fmt.Println("start  ")
 	//util.QuerySequence("19D4B36BAAA7B203B301CB86F543EB2F49E34D39", "localhost", "46657")
 	//GetSomethingNew([]byte("19D4B36BAAA7B203B301CB86F543EB2F49E34D39"))
-	//result :=util.SendTx("ligang", "1234567890", "1mycoin", "19D4B36BAAA7B203B301CB86F543EB2F49E34D39", "test_chain_id")
-	//result2, err :=util.QueryBalance("19D4B36BAAA7B203B301CB86F543EB2F49E34D39", "localhost", "46657")
+	//result2, err :=util.QueryBalance("7716381C2D66A48ABA8C8A2B29E989C49AF2D68C", "localhost", "46657")
+	//fmt.Println(result2)
+	//result :=util.SendTx("ligang", "1234567890", "1mycoin", "7716381C2D66A48ABA8C8A2B29E989C49AF2D68C")
+	//result2, err =util.QueryBalance("7716381C2D66A48ABA8C8A2B29E989C49AF2D68C", "localhost", "46657")
 	//fmt.Println(result)
 	//fmt.Println(err)
 	//fmt.Println(result2)
 
-	http.HandleFunc("/sign", sign)
-	err := http.ListenAndServe("localhost:46600", nil)
-	if err != nil{
-		fmt.Println(err)
-	}
-	fmt.Println("end")
+	//http.HandleFunc("/sign", sign)
+	//err := http.ListenAndServe("localhost:46600", nil)
+	//if err != nil{
+	//	fmt.Println(err)
+	//}
+	//fmt.Println("end")
+
 }
 func sign(w http.ResponseWriter, r *http.Request){
 	fmt.Println("sign yes")
@@ -49,7 +52,7 @@ func sign(w http.ResponseWriter, r *http.Request){
 	message := query["message"][0]
 	password := query["password"][0]
 
-	_, sig := util.Sign(name, message, password)
+	_, sig, _ := util.Sign(name, message, password)
 	fmt.Println(sig)
 	w.Write(sig)
 }

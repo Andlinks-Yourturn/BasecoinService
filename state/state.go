@@ -44,6 +44,7 @@ func (s *State) GetChainID() string {
 	return s.chainID
 }
 
+
 func (s *State) Get(key []byte) (value []byte) {
 	if s.readCache != nil { //if not a cachewrap
 		value, ok := s.readCache[string(key)]

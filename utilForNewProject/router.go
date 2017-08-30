@@ -5,6 +5,7 @@ package utilForNewProject
 import (
 	 "net/http"
 	"fmt"
+	"encoding/hex"
 )
 /*set router for basecoin to handle http request
 	created by ligang 2017/8/25
@@ -31,11 +32,16 @@ func sign(w http.ResponseWriter, r *http.Request){
 	password := query["password"][0]
 
 
-	_, sig := Sign(name, message, password)
-
-
-	fmt.Println(sig)
- 	w.Write(sig)
+	_,  sig, err:= Sign(name, message, password)
+	fmt.Println(hex.EncodeToString(sig))
+	if err != nil{
+		fmt.Println(err)
+		w.WriteHeader(500)
+		w.Write([]byte("fail"))
+	}else {
+		fmt.Println(sig)
+		w.Write(sig)
+	}
 }
 
 // "http://localhost:46600/verify?name=&signature=&message="
@@ -45,13 +51,21 @@ func verify(w http.ResponseWriter, r *http.Request){
 	sig := query["signature"][0]
 	message := query["message"][0]
 
-	info, _ := QueryKeyInfo(name)
-	pubkey := info.PubKey.Bytes()[1:]
-	result := Verify(pubkey, []byte(sig), []byte(message))
-	if result {
-		w.Write([]byte("true"))
-	}else {
+	sigByte, err := hex.DecodeString(sig)
+
+	fmt.Println(name, sig, sigByte)
+	info, err := QueryKeyInfo(name)
+	if err != nil{
 		w.Write([]byte("false"))
+	}else {
+		pubkey := info.PubKey.Bytes()[1:]
+		fmt.Println(pubkey)
+		result := Verify(pubkey, sigByte, []byte(message))
+		if result {
+			w.Write([]byte("true"))
+		} else {
+			w.Write([]byte("false"))
+		}
 	}
 }
 

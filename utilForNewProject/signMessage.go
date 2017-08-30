@@ -11,11 +11,11 @@ import (
 	ed25519 "golang.org/x/crypto/ed25519"
 )
 const KeySubdir = "keys"
-var signEssue SignatureEssue
+var signEssue  SignatureEssue
 
 type SignatureEssue struct {
-	Publikeys []crypto.PubKey
-	Sigs  []crypto.Signature
+	Publikey crypto.PubKey
+	Sig  crypto.Signature
 	Message [] byte
 }
 
@@ -25,14 +25,16 @@ func (sign *SignatureEssue) SignBytes() []byte{
 }
 func (sign *SignatureEssue) Sign(pubkey crypto.PubKey, sig crypto.Signature) error{
 	//put the pubkey into SignatureEssue
-	sign.Publikeys = append(sign.Publikeys, pubkey)
-	sign.Sigs = append(sign.Sigs, sig)
+	//sign.Publikeys = append(sign.Publikeys, pubkey)
+	//sign.Sigs = append(sign.Sigs, sig)
+	sign.Publikey = pubkey
+	sign.Sig = sig
 	return nil
 }
 func (sign *SignatureEssue) Signers() ([]crypto.PubKey, error){
 	// Signers will return the public key(s) that signed if the signature
 	// is valid, or an error if there is any issue with the signature,
-	return sign.Publikeys, nil
+	return []crypto.PubKey{sign.Publikey},  nil
 }
 func (sign * SignatureEssue) TxBytes() ([]byte, error){
 	// TxBytes returns the transaction data as well as all signatures
@@ -43,7 +45,7 @@ func (sign * SignatureEssue) TxBytes() ([]byte, error){
 
 //return publickey & signature
 //later using these return value to verify
-func Sign(name string, message string, password string)([]byte, []byte){
+func Sign(name string, message string, password string)([]byte, []byte, error){
 
 	var manager cryptostore.Manager
 	rootDir := os.Getenv("BASECLIHOME")
@@ -59,18 +61,23 @@ func Sign(name string, message string, password string)([]byte, []byte){
 		codec,
 	)
 	var sign keys.Signable
+	fmt.Println(&sign)
 	sign = &signEssue
-	manager.Sign(name, password, sign)
-
-	return  signEssue.Publikeys[0].Bytes()[1:] ,signEssue.Sigs[0].Bytes()[1:]
+	fmt.Println(sign)
+	err := manager.Sign(name, password, sign)
+	if err != nil{
+		return 	nil, nil, err
+	}else {
+		return signEssue.Publikey.Bytes()[1:], signEssue.Sig.Bytes()[1:], nil
+	}
 }
 
 func Verify(pubkey []byte , sig  []byte, messsage []byte) bool {
 	//pubKey []byte, message , sig []byte
 
-	if len(signEssue.Sigs) == 0 || len(signEssue.Publikeys)== 0 || len(signEssue.Message) == 0{
-		return false
-	}
+	//if len(signEssue.Sigs) == 0 || len(signEssue.Publikeys)== 0 || len(signEssue.Message) == 0{
+	//	return false
+	//}
 	//fmt.Println("signEssue.Publickeys[0].Bytes")
 	//fmt.Println(len(signEssue.Publikeys[0].Bytes()))
 	//fmt.Println(string(signEssue.Publikeys[0].Bytes()))

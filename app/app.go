@@ -168,6 +168,7 @@ func (app *Basecoin) Query(reqQuery abci.RequestQuery) (resQuery abci.ResponseQu
 			}
 		//address := utilQueryStruct.Address
 		acc := app.state.GetAccount(queryData)
+		fmt.Println(acc.Sequence)
 		resQuery.Index = (int64(acc.Sequence))
 		return resQuery
 	}
